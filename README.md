@@ -9,17 +9,22 @@ Author: Stephen Diehl ( stephen.m.diehl@gmail.com )
 Directions:
 ===========
 
-1. Install Django Sentry as usual.
-2. Add jSentry and Sentry to your `INSTALLED_APPS`
+1. Install Django Sentry as usual
+1.  Add jSentry and Sentry to your `INSTALLED_APPS`
 
->     INSTALLED_APPS = (
->        'sentry',
->        'sentry.client',
->        'jsentry',
->        ...
->      )
+ >     INSTALLED_APPS = (
+ >        'sentry',
+ >        'sentry.client',
+ >        'jsentry',
+ >        ...
+ >      )
+ 
+1. Include the urls in your urls.py: 
 
-3. Call `handleErrors('/js_error_handler')` somewhere on your page.
+ >    urlpatterns += url(r'^', include('jsentry.urls'))
+
+1. Call `handleErrors('/js_error_handler/')` somewhere on your page.
+
 
 License:
 ========
