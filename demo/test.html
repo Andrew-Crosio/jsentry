@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script> 
+    <script src="/media/jsentry.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Direct javascript errors off to the server
+            handleErrors('/js_error_handler/');
+            $('html').click(function() {
+                throw("Error 1");
+                throw("Error 2");
+                eval('foo');
+            });
+        }):
+    </script>
+</head>
+<body>
+
+</body>
+</html>
