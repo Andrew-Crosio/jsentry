@@ -5,7 +5,6 @@ import logging
 def js_error_handler(request, *args, **kwargs):
 
     message = request.POST.get('message', None)
-    timestamp = request.POST.get('timestamp', None)
     url = request.POST.get('url', None)
 
     client.create_from_text(message, level=logging.ERROR, url=url, request=request)
